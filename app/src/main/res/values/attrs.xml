@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TextViewNormal">
+        <attr name="drawableLeftCompat" format="reference"/>
+        <attr name="drawableRightCompat" format="reference"/>
+        <attr name="drawableTopCompat" format="reference"/>
+        <attr name="drawableBottomCompat" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="TextViewMedium">
+        <attr name="drawableLeftCompatMedium" format="reference"/>
+        <attr name="drawableRightCompatMedium" format="reference"/>
+        <attr name="drawableTopCompatMedium" format="reference"/>
+        <attr name="drawableBottomCompatMedium" format="reference"/>
+    </declare-styleable>
+
+</resources>

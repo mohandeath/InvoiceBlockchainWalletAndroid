@@ -1,9 +1,10 @@
-package mvp.larin.cash.larinmvp
+package mvp.larin.cash.larinmvp.view.common
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import mvp.larin.cash.larinmvp.R
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : ActParent() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

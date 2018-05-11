@@ -29,7 +29,7 @@
             tools:replace="android:value"
             android:name="android.support.VERSION"
             android:value="26.0.2" />
-    <activity android:name=".MainActivity">
+    <activity android:name=".view.common.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
