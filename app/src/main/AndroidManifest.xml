@@ -24,12 +24,11 @@
         android:theme="@style/AppTheme"
         tools:replace="label,icon,android:allowBackup,android:supportsRtl">
 
-    >
         <meta-data
             tools:replace="android:value"
             android:name="android.support.VERSION"
             android:value="26.0.2" />
-    <activity android:name=".view.common.MainActivity">
+    <activity android:name=".view.common.MainActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

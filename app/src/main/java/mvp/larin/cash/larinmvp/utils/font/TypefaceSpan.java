@@ -11,6 +11,8 @@ import android.text.TextPaint;
 import android.text.style.MetricAffectingSpan;
 import android.util.LruCache;
 
+import com.likotv.common.utils.font.FontNames;
+
 @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR1)
 public class TypefaceSpan extends MetricAffectingSpan {
     /**

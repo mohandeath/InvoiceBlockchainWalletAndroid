@@ -6,6 +6,7 @@ import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.AlignmentSpan
 import android.text.style.UnderlineSpan
+import mvp.larin.cash.larinmvp.utils.font.TypefaceSpan
 
 /**
  * Created by mohammad on 8/6/14.
