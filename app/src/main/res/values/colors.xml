@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#3fa9f5</color>
+    <color name="colorPrimaryBgPlayTools">#801D2637</color>
+    <color name="colorPrimaryDark">#2c3e50</color>
+    <color name="colorFilterBox">#ec2b344d</color>
+    <color name="colorDialogDark">#e000152c</color>
+    <color name="colorDialogProfile">#CE00152C</color>
+    <color name="colorPrimaryDarkransparent">#81232e41</color>
+    <color name="colorAccent">#33CCC</color>
+    <color name="tags_stroke_color">#FAF96D</color>
+    <color name="tags_color">#FF6363</color>
+    <color name="home_back_color">#444</color>
+    <color name="white">#ffffff</color>
+    <color name="gray_text">#99ffffff</color>
+    <color name="gray_setting_divider_color">#7fffffff</color>
+    <color name="color_bg_list_view">#cc00152C</color>
+    <color name="shadow_color">#00152C</color>
+    <color name="progress_fill_color">#FEAA0A</color>
+    <color name="status_bar_color">#1Affffff</color>
+    <color name="cart_color">#FF232E41</color>
+    <color name="more_menu_back_color">#2A3D5D</color>
+    <color name="black">#000000</color>
+    <color name="colorRed">#FF6363</color>
+    <color name="transparent_background">#00152C</color>
+
 </resources>
