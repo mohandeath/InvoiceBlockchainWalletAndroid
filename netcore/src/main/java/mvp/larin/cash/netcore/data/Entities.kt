@@ -28,4 +28,4 @@ open class MainModel {
 
 data class GenericModel(val walletId:String,val date: Date)
 data class BaseResponse<Tt>(val count:Int,val next: Int,val previous:Int,val results:List<Tt>):MainModel()
-data class Invoice(val created:String,val owner_wallet:String="",val customer_wallet:String="",val vendor_wallet:String="",val image:String="",val title:String="",val description:String="",val invoice_id:String="",val amount:Int,val phone:String="" )
+data class Invoice(val vendor_name:String,val created:String,val owner_wallet:String="",val customer_wallet:String="",val vendor_wallet:String="",val image:String="",val title:String="",val description:String="",val invoice_id:String="",val amount:Int,val phone:String="" )
