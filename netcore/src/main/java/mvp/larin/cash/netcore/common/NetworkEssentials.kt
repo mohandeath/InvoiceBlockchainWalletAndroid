@@ -27,7 +27,9 @@ import java.util.concurrent.TimeUnit
 object Const {
 
     object URL {
-        private const val VERSION = "2"
+        private const val VERSION = "1"
+        const val INVOICE_LIST = "v$VERSION/invoice/list"
+
     }
 
     val AUTH_KEY = "Authorization"
@@ -72,8 +74,6 @@ interface PresenterLayer {
 
     fun getUserName(): String
 
-    fun getSecurityProvider(): SecurityProvider
-
     fun setIsGuestFlag(isGuest: Boolean)
 
     fun isDebugMode(): Boolean
@@ -83,10 +83,7 @@ interface PresenterLayer {
 }
 
 //AES/256/CBC
-interface SecurityProvider {
-    fun encryptRSA(input: String): String
-    fun encryptAES(input: String): String
-}
+
 
 class MyCallBack<T>(val presenterLayer: PresenterLayer, private val listener: NetWorkLoadListener<T>) : Callback<T> where T : MainModel {
     var loginAttemptCount = 0
@@ -175,14 +172,7 @@ open class BaseNetWorker<T>(private val presenterLayer: PresenterLayer, tClass: 
     }
 
 
-    protected fun encAES(jsonContent: String): String {
-        return presenterLayer.getSecurityProvider().encryptAES(jsonContent)
-    }
 
-
-    protected fun encrypt(jsonContent: String): String {
-        return presenterLayer.getSecurityProvider().encryptRSA(jsonContent)
-    }
 
 }
 

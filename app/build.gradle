@@ -32,8 +32,8 @@ android {
     productFlavors {
 
         uat {
-            buildConfigField "String", "HTTP_BASE_URL", "\"http://127.0.0.1\""
-            buildConfigField "String", "PORT", "\"8089\""
+            buildConfigField "String", "HTTP_BASE_URL", "\"http://192.168.1.117\""
+            buildConfigField "String", "PORT", "\"8070\""
             buildConfigField "String", "CONTRACT_ADDRESS", "\"0x8b773716E89549d8BA162d62aa0496bfeBd099C0\""
             buildConfigField "String", "API_LEVEL", "\"1\""
             buildConfigField "boolean", "SSL_PROCEED", "true"

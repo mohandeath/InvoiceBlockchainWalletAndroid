@@ -1,4 +1,4 @@
-package com.likotv.common.presenter
+package mvp.larin.cash.larinmvp.common
 
 /**
  * Created by mohandeath on 8/6/17.

@@ -8,6 +8,8 @@ import android.view.WindowManager
  * Created by mohandeath on 5/11/2018 AD.
  */
 open class ActParent : AppCompatActivity() {
+    protected var isLoaded = false
+
 
     protected val ctx: Context = this
 
