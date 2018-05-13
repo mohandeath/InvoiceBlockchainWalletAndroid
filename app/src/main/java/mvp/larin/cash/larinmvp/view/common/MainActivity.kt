@@ -3,6 +3,7 @@ package mvp.larin.cash.larinmvp.view.common
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.widget.SwipeRefreshLayout
+import android.support.v7.widget.LinearLayoutManager
 import android.widget.Toast
 import mvp.larin.cash.larinmvp.R
 import kotlinx.android.synthetic.main.act_home.*
@@ -37,8 +38,9 @@ class MainActivity : ActParent(),HomePageView, SwipeRefreshLayout.OnRefreshListe
 
     override fun retriveInvoiceList(state: Boolean, data: BaseResponse<Invoice>?, message: ExtraMessage?) {
         if (data != null && state){
+            rv.layoutManager = LinearLayoutManager(ctx, LinearLayoutManager.VERTICAL, false)
             rv.adapter = AdapterInvoice(ctx,data!!.results,{action,invoice->
-                Toast.makeText(ctx,"clicked on ${invoice.title}",Toast.LENGTH_LONG).show()
+                Toast.makeText(ctx,"clicked on ${invoice?.title}",Toast.LENGTH_LONG).show()
             })
         }
     }
