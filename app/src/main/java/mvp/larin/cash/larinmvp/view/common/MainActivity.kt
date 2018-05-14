@@ -9,6 +9,7 @@ import mvp.larin.cash.larinmvp.R
 import kotlinx.android.synthetic.main.act_home.*
 import mvp.larin.cash.larinmvp.common.AppManager
 import mvp.larin.cash.larinmvp.common.BasePresenter
+import mvp.larin.cash.larinmvp.common.DialogHelper
 import mvp.larin.cash.larinmvp.transactions.view.AdapterInvoice
 import mvp.larin.cash.larinmvp.transactions.view.HomePagePresenter
 import mvp.larin.cash.larinmvp.transactions.view.HomePagePresenterIMPL
@@ -40,7 +41,7 @@ class MainActivity : ActParent(),HomePageView, SwipeRefreshLayout.OnRefreshListe
         if (data != null && state){
             rv.layoutManager = LinearLayoutManager(ctx, LinearLayoutManager.VERTICAL, false)
             rv.adapter = AdapterInvoice(ctx,data!!.results,{action,invoice->
-                Toast.makeText(ctx,"clicked on ${invoice?.title}",Toast.LENGTH_LONG).show()
+                DialogHelper.showInvoiceDetailDialog(ctx,invoice!!,{},{})
             })
         }
     }

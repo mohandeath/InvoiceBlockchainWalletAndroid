@@ -1,13 +1,11 @@
 package mvp.larin.cash.larinmvp.common
 
+import android.app.Dialog
 import android.content.Context
 import android.support.v4.content.ContextCompat
-import android.view.Gravity
+import android.support.v7.widget.CardView
 import android.view.LayoutInflater
-import android.view.View
-import android.widget.RadioButton
-import android.widget.RadioGroup
-import android.widget.RelativeLayout
+import android.widget.TextView
 import com.afollestad.materialdialogs.GravityEnum
 import com.afollestad.materialdialogs.MaterialDialog
 import mvp.larin.cash.larinmvp.R
@@ -37,18 +35,27 @@ class DialogHelper{
             dlg.show()
         }
 
-        fun showInvoiceDetailDialog(ctx: Context,invoice:Invoice, positiveClick: () -> Unit, negativeClick: () -> Unit){
+        fun showInvoiceDetailDialog(ctx: Context,invoice:Invoice, walletPayClicked: () -> Unit, instantPayClicked: () -> Unit){
             val view = LayoutInflater.from(ctx).inflate(R.layout.dlg_invoice_confirm, null)
-            val dlg = MaterialDialog.Builder(ctx)
-                    .title("Invoice Details")
-                    .titleColorRes(R.color.white)
-                    .titleGravity(GravityEnum.START)
-                    .typeface(FontFace.getInstance(ctx)?.iranSans, FontFace.getInstance(ctx)?.iranSansMobile_Bold)
-                    .contentGravity(GravityEnum.END)
-                    .backgroundColorRes(R.color.colorPrimary)
-                    .buttonsGravity(GravityEnum.END)
-                    .customView(view, false)
-                    .build()
+            val dlg = Dialog(ctx)
+            dlg.setContentView(view)
+            var label_txt:TextView = dlg.findViewById(R.id.txt_lael)
+            var txt_vendor_name:TextView = dlg.findViewById(R.id.txt_vendor_name)
+            var txt_invoice_code:TextView = dlg.findViewById(R.id.txt_invoice_code)
+            var support_phone:TextView = dlg.findViewById(R.id.support_phone)
+            var txt_vendor_wallet:TextView = dlg.findViewById(R.id.txt_vendor_wallet)
+            var txt_desc:TextView = dlg.findViewById(R.id.txt_desc)
+            var btn_pay_wallet:CardView = dlg.findViewById(R.id.btn_pay_wallet)
+            var btn_instant_pay:CardView = dlg.findViewById(R.id.btn_instant_pay)
+            label_txt.text = "Title : ${invoice.title}"
+            txt_vendor_name.text = "Vendor's name: ${invoice.vendor_name}"
+            txt_invoice_code.text = "Code : ${invoice.invoice_code}"
+            support_phone.text = "Support: ${invoice.phone}"
+            var address_len = invoice.vendor_wallet.length
+            txt_vendor_wallet.text = "Dest Address: ${invoice.vendor_wallet.substring(0,5)}...${invoice.vendor_wallet.substring(address_len-3,address_len-1)}"
+            txt_desc.text = invoice.description
+            btn_pay_wallet.setOnClickListener { walletPayClicked.invoke() }
+            btn_instant_pay.setOnClickListener { instantPayClicked.invoke() }
 
             /*
                 here it goes main codes of dialog
