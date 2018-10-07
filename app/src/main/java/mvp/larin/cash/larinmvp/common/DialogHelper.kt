@@ -47,16 +47,19 @@ class DialogHelper{
             var txt_desc:TextView = dlg.findViewById(R.id.txt_desc)
             var btn_pay_wallet:CardView = dlg.findViewById(R.id.btn_pay_wallet)
             var btn_instant_pay:CardView = dlg.findViewById(R.id.btn_instant_pay)
+            var txt_price_label:TextView = dlg.findViewById(R.id.txt_price_label)
             label_txt.text = "Title : ${invoice.title}"
-            txt_vendor_name.text = "Vendor's name: ${invoice.vendor_name}"
+            txt_vendor_name.text = "Vendor's name: ${invoice.vendor}"
             txt_invoice_code.text = "Code : ${invoice.invoice_code}"
             support_phone.text = "Support: ${invoice.phone}"
-            var address_len = invoice.vendor_wallet.length
-            txt_vendor_wallet.text = "Dest Address: ${invoice.vendor_wallet.substring(0,5)}...${invoice.vendor_wallet.substring(address_len-3,address_len-1)}"
+            var address_len = invoice.vendor.length
+            txt_vendor_wallet.text = "Dest Address: ${invoice.vendor.substring(0,5)}...${invoice.vendor.substring(address_len-3,address_len-1)}"
             txt_desc.text = invoice.description
-            btn_pay_wallet.setOnClickListener { walletPayClicked.invoke() }
+            btn_pay_wallet.setOnClickListener { walletPayClicked.invoke()
+                dlg.dismiss()
+            }
             btn_instant_pay.setOnClickListener { instantPayClicked.invoke() }
-
+            txt_price_label.text = "${invoice.amount}  Rials"
             /*
                 here it goes main codes of dialog
             * */
@@ -75,6 +78,13 @@ class DialogHelper{
                     .negativeColor(ContextCompat.getColor(ctx, R.color.colorRed))
                     .typeface(FontFace.getInstance(ctx)?.iranSans_Medium, FontFace.getInstance(ctx)?.iranSans)
                     .positiveText("Approve")
+        }
+
+        fun makeLoadingDialog(ctx: Context):Dialog{
+            val view = LayoutInflater.from(ctx).inflate(R.layout.dlg_loading, null)
+            val dlg = Dialog(ctx)
+            dlg.setContentView(view)
+            return dlg
         }
 
     }

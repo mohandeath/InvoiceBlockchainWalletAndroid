@@ -25,7 +25,7 @@ class AdapterInvoice(val ctx: Context, val items: List<Invoice>, val opClick: (C
         var item = items[position]
         holder?.txt_label?.text = item.title
         holder?.txt_date?.text = item.created
-        holder?.txt_price?.text = item.amount.toString()
+        holder?.txt_price?.text = "${item.amount.toString()} Rials"
         ImageHelper.getInstance(ctx).loadImage(items[position].image, holder?.img_vendor, R.drawable.outline)
         holder?.itemView?.setOnClickListener {
             opClick(ClickAction.INVOICE_CLICKED, item)

@@ -26,6 +26,7 @@ open class MainModel {
     }
 }
 
-data class GenericModel(val walletId:String,val date: Date)
+data class GenericModel(val success:Boolean,val error:String="",val data:String=""):MainModel()
 data class BaseResponse<Tt>(val count:Int,val next: Int,val previous:Int,val results:List<Tt>):MainModel()
-data class Invoice(val vendor_name:String, val created:String, val owner_wallet:String="", val customer_wallet:String="", val vendor_wallet:String="", val image:String="", val title:String="", val description:String="", val invoice_code:String="", val amount:Int, val phone:String="" )
+data class Invoice(val is_paid:Boolean=false,val vendor_name:String, val created:String, val owner:BlockchainAccount, val to:String="", val vendor:String="", val image:String="", val title:String="", val description:String="", val invoice_code:String="", val amount:Int, val phone:String="" )
+data class BlockchainAccount(val name:String,val wallet_id:String,val balance:Int)

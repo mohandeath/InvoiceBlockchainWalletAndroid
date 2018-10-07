@@ -35,6 +35,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".transactions.view.ActTransactionRecepiet" android:label="recepitT" android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

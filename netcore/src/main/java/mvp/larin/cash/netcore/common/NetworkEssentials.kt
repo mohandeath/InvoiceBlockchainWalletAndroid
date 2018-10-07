@@ -29,6 +29,8 @@ object Const {
     object URL {
         private const val VERSION = "1"
         const val INVOICE_LIST = "v$VERSION/invoice/list"
+        const val INVOICE_PAY = "v$VERSION/invoice/pay_invoice/"
+        const val GET_BALANCE = "v$VERSION/account/getbalance"
 
     }
 
